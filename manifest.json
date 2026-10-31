@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "insta-search",
+  "version": "0.1",
+  "permissions": ["storage"],
+  "host_permissions": ["*://*.instagram.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.instagram.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle",
+      "world": "MAIN"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html"
+  }
+}
