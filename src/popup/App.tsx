@@ -1,4 +1,5 @@
 import "./style.css";
+import {addPost} from "../db";
 import {useState} from "react";
 function App()
 {   const[val,setVal]=useState("");
@@ -8,6 +9,8 @@ function App()
         window.open(`https://www.instagram.com/${username}/`, "_blank");
     }
     
+
+    
     return(
         
         <div className="parent">
@@ -15,6 +18,7 @@ function App()
             <h3>Enter instagram profile username</h3>
             <input type="text" value={val} onChange={(event)=>setVal(event.target.value)} placeholder="Enter instagram url"/>
             <button onClick={handleSearch}>Search</button>
+            
         </div>
     );
 }

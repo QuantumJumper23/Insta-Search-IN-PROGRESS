@@ -48,6 +48,7 @@ XMLHttpRequest.prototype.send=function(...argumentToSend:any[])
                 const data=JSON.parse(this.responseText);
                 const posts=extractPosts(data);
                 console.log("Extracted posts:",posts);
+                window.postMessage({type:"insta_posts",posts:posts},window.location.origin);
 
             }catch(error)
             {
